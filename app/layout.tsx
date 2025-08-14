@@ -6,7 +6,7 @@ import "./globals.css"
 import { AuthProvider } from "@/contexts/auth-context"
 
 export const metadata: Metadata = {
-  title: "date2meaa - Find Your Perfect Match",
+  title: "Date2Me - Find Your Perfect Match",
   description: "Connect with amazing people and find meaningful relationships",
   generator: "v0.app",
 }

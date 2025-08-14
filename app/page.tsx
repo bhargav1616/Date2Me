@@ -29,7 +29,7 @@ export default function HomePage() {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Heart className="h-8 w-8 text-red-500" />
-            <h1 className="text-2xl font-bold text-gray-900">date2meaa</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Date2Me</h1>
           </div>
           <div className="space-x-4">
             <Button variant="outline" onClick={() => handleAuthClick("login")}>
