@@ -66,7 +66,7 @@ export default function AuthModal({ isOpen, onClose, mode, onModeChange }: AuthM
           <div className="flex items-center justify-center mb-4">
             <Heart className="h-8 w-8 text-red-500" />
           </div>
-          <DialogTitle className="text-center">{mode === "login" ? "Welcome Back" : "Join date2meaa"}</DialogTitle>
+          <DialogTitle className="text-center">{mode === "login" ? "Welcome Back" : "Join Date2Me"}</DialogTitle>
         </DialogHeader>
 
         <Card>

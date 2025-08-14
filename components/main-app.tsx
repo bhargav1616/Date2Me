@@ -49,7 +49,7 @@ export default function MainApp() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Heart className="h-6 w-6 md:h-8 md:w-8 text-red-500" />
-              <h1 className="text-xl md:text-2xl font-bold text-gray-900">date2meaa</h1>
+              <h1 className="text-xl md:text-2xl font-bold text-gray-900">Date2Me</h1>
             </div>
             <div className="flex items-center space-x-2 md:space-x-4">
               <span className="text-xs md:text-sm text-gray-600 hidden sm:block">Welcome, {user?.name}</span>

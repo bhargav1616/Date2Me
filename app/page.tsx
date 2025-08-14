@@ -47,7 +47,7 @@ export default function HomePage() {
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-5xl font-bold text-gray-900 mb-6">Find Your Perfect Match</h2>
           <p className="text-xl text-gray-600 mb-8">
-            Connect with amazing people, make new friends, and find meaningful relationships on date2meaa
+            Connect with amazing people, make new friends, and find meaningful relationships on Date2Me
           </p>
           <Button
             size="lg"
