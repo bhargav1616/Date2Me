@@ -42,29 +42,30 @@ export default function MainApp() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Top Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Heart className="h-8 w-8 text-red-500" />
-              <h1 className="text-2xl font-bold text-gray-900">Date2Me</h1>
+              <Heart className="h-6 w-6 md:h-8 md:w-8 text-red-500" />
+              <h1 className="text-xl md:text-2xl font-bold text-gray-900">date2meaa</h1>
             </div>
-            <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-600">Welcome, {user?.name}</span>
-              <Button variant="outline" size="sm" onClick={logout}>
-                <LogOut className="h-4 w-4 mr-2" />
-                Logout
+            <div className="flex items-center space-x-2 md:space-x-4">
+              <span className="text-xs md:text-sm text-gray-600 hidden sm:block">Welcome, {user?.name}</span>
+              <Button variant="outline" size="sm" onClick={logout} className="text-xs md:text-sm bg-transparent">
+                <LogOut className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
+                <span className="hidden sm:inline">Logout</span>
+                <span className="sm:hidden">Exit</span>
               </Button>
             </div>
           </div>
         </div>
       </header>
 
-      <div className="flex">
-        {/* Sidebar Navigation */}
-        <nav className="w-64 bg-white shadow-sm min-h-screen">
+      <div className="flex flex-1 md:flex-row flex-col">
+        {/* Desktop Sidebar Navigation - Hidden on mobile */}
+        <nav className="hidden md:block w-64 bg-white shadow-sm">
           <div className="p-4">
             <ul className="space-y-2">
               {navItems.map((item) => {
@@ -89,8 +90,30 @@ export default function MainApp() {
         </nav>
 
         {/* Main Content */}
-        <main className="flex-1 p-6">{renderPage()}</main>
+        <main className="flex-1 p-4 md:p-6 pb-20 md:pb-6">{renderPage()}</main>
       </div>
+
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg">
+        <div className="flex justify-around items-center py-2">
+          {navItems.map((item) => {
+            const Icon = item.icon
+            return (
+              <Button
+                key={item.id}
+                variant="ghost"
+                size="sm"
+                className={`flex flex-col items-center justify-center h-16 w-16 rounded-none ${
+                  currentPage === item.id ? "text-red-500 bg-red-50" : "text-gray-600"
+                }`}
+                onClick={() => setCurrentPage(item.id as PageType)}
+              >
+                <Icon className="h-5 w-5 mb-1" />
+                <span className="text-xs">{item.label}</span>
+              </Button>
+            )
+          })}
+        </div>
+      </nav>
     </div>
   )
 }
